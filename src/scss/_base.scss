@@ -1,0 +1,72 @@
+// variables
+
+// color
+
+$bg: #f5f7fb;
+$text: #293264;
+
+// btn
+
+$bg-btn: #4d5b9e;
+$text-btn: #f5f7fb;
+
+// btn answers
+
+$border-btn: #4d5b9e;
+$text-answer-btn: #293264;
+$bg-select-btn: #d6dbf5;
+$bg-correct-btn: #94d7a2;
+$bg-wrong-btn: #f8bcbc;
+$noSelect-opacity-btn: 0.5;
+
+// boilerplate reset
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: $bg;
+}
+
+// fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Karla:wght@700&display=swap");
+
+p {
+  font-family: inter;
+  font-weight: 400;
+  color: $text;
+  font-size: 1.6rem;
+}
+
+button {
+  font-family: inter;
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: karla;
+  font-weight: 700;
+  color: $text;
+}
+
+

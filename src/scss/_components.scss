@@ -1,0 +1,13 @@
+@use './base' as *;
+
+button{
+  border: none;
+  cursor: pointer;
+}
+
+.primaryButton{
+  background-color: $bg-btn;
+  color: $text-btn;
+  border-radius: 1.5rem;
+  font-size: 1.6rem;
+}
