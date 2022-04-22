@@ -42,6 +42,12 @@ body {
   background-color: $bg;
 }
 
+main::after{
+  content: "";
+  
+  
+}
+
 // fonts
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Karla:wght@700&display=swap");

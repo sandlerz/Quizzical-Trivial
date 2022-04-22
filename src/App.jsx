@@ -4,21 +4,22 @@ import getTriviaData from "./services/getTriviaData"
 import "./scss/index.scss"
 import Questions from "./Components/Questions"
 import Start from "./Components/Start"
+import Loading from "./Components/Loading"
 
 function App() {
   const [getTrivia, setGetTrivia] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  // useEffect(() => {
-  //   getTriviaData().then(questions => setGetTrivia(questions))
-  // }, [])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(false)
     const intervalId = setInterval(() => {
-      setLoading(false)
-    }, 1000);
-    return clearInterval(intervalId)
-  },[getTrivia])
+      setLoading(true)
+    }, 1000)
+
+    return () => clearInterval(intervalId)
+  }, [getTrivia])
+
+  console.log(loading)
 
   const handleStart = () => {
     getTriviaData().then(questions => {
@@ -26,14 +27,17 @@ function App() {
     })
   }
 
-  console.log(loading)
-  if (getTrivia == false) return <Start start={handleStart}/>
-  if (loading) return <p>loading</p>
-
   return (
     <main>
-      Quizzical trivia
-      <Questions questions={getTrivia} />
+      <div className="bg__image img__top"></div>
+      {getTrivia == false ? (
+        <Start start={handleStart} />
+      ) : !loading ? (
+        <Loading />
+      ) : (
+        <Questions questions={getTrivia} />
+      )}
+      <div className="bg__image img__bot"></div>
     </main>
   )
 }
