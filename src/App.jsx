@@ -33,7 +33,7 @@ function App() {
       ) : !loading ? (
         <Loading />
       ) : (
-        <Questions data={getTrivia} />
+        <Questions data={getTrivia} start={handleStart} />
       )}
       <div className="bg__image img__bot"></div>
     </main>

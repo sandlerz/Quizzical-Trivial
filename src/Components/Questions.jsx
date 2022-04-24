@@ -1,7 +1,8 @@
 import { useState } from "react"
 import Answer from "./Answer"
+import Start from "./Start"
 
-export default function Questions({ data }) {
+export default function Questions({ data, start }) {
   const [answerState, setAnswerState] = useState({
     [data[0].question]: "",
     [data[1].question]: "",
@@ -43,23 +44,42 @@ export default function Questions({ data }) {
   })
 
   const handleEmpty = () => {
+    let x = 0
     for (let key in answerState) {
-      if (answerState[key] == "") {
+      if (answerState[key] === "") {
         return alert("responds all questions")
       }
+      if (data[x].correct_answer === answerState[key]) {
+        setCorrectAnswers(prev => prev + 1)
+      }
+      x += 1
     }
+
+    for (let x = 0; x < 5; x++) {}
     setCheck(true)
   }
 
   return (
     <div className="form_container">
       {questions}
-      <button
-        className="primaryButton primaryButton--check"
-        onClick={handleEmpty}
-      >
-        Check answers
-      </button>
+      {!check ? (
+        <button
+          className="primaryButton primaryButton--check"
+          onClick={handleEmpty}
+        >
+          Check answers
+        </button>
+      ) : (
+        <div className="footer">
+          <h1>You Scored {correctAnswers}/5 correct answer</h1>
+          <button
+            className="primaryButton primaryButton--playAgain"
+            onClick={start}
+          >
+            Start Quiz
+          </button>
+        </div>
+      )}
     </div>
   )
 }

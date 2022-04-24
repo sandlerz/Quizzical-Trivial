@@ -17,6 +17,10 @@ button {
   margin: auto;
 }
 
+.primaryButton--playAgain {
+  margin: 0;
+}
+
 .answers-button {
   background-color: transparent;
   border: 0.1rem solid $text-answer-btn;
@@ -32,4 +36,13 @@ button {
   padding: 0.6rem 2.5rem;
   color: $text;
   transition: all 0.3s;
+}
+
+.answers-button--unselect {
+  background-color: transparent;
+  border: 0.1rem solid $bg-select-btn;
+  border-radius: 1rem;
+  padding: 0.6rem 2.5rem;
+  color: $text;
+  opacity: 0.6;
 }

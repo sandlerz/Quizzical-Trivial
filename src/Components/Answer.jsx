@@ -12,9 +12,9 @@ export default function Answer({
 
   if (answerState[question] === answer) {
     if (answer === correctAnswers) {
-      style = { backgroundColor: "green" }
+      style = { backgroundColor: "#94D7A2", opacity: "1" }
     } else {
-      style = { backgroundColor: "red" }
+      style = { backgroundColor: "#F8BCBC" }
     }
   }
 
@@ -22,11 +22,7 @@ export default function Answer({
     button = (
       <button
         dangerouslySetInnerHTML={{ __html: answer }}
-        className={
-          answerState[question] === answer
-            ? "answers-button--select"
-            : "answers-button"
-        }
+        className="answers-button--unselect"
         style={style}
       />
     )
@@ -43,5 +39,6 @@ export default function Answer({
       />
     )
   }
+
   return <>{button}</>
 }
