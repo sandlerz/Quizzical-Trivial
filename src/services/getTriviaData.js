@@ -19,7 +19,7 @@ export default function getTriviaData() {
 }
 
 export function mixAnswers(arr) {
-  let nums = [arr[0], arr[1], arr[2], arr[3]]
+  let nums = [...arr]
   let ranNums = []
   let i = nums.length
   let j = 0

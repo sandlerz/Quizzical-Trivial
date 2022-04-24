@@ -5,17 +5,16 @@ export default function Answer({
   correctAnswers,
   question,
   check,
-  correctCount,
 }) {
-  let button
+  let button = null
   let style = null
 
-  if (answerState[question] === answer) {
-    if (answer === correctAnswers) {
-      style = { backgroundColor: "#94D7A2", opacity: "1" }
-    } else {
-      style = { backgroundColor: "#F8BCBC" }
-    }
+  if (answerState[question] === answer && answer === correctAnswers) {
+    style = { backgroundColor: "#94D7A2", opacity: "1" }
+  } else if (answerState[question] !== answer && answer === correctAnswers) {
+    style = { backgroundColor: "#94D7A2" }
+  } else if (answerState[question] === answer) {
+    style = { backgroundColor: "#F8BCBC", opacity: "1" }
   }
 
   if (check) {

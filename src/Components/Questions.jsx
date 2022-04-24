@@ -1,6 +1,5 @@
 import { useState } from "react"
 import Answer from "./Answer"
-import Start from "./Start"
 
 export default function Questions({ data, start }) {
   const [answerState, setAnswerState] = useState({
@@ -34,7 +33,6 @@ export default function Questions({ data, start }) {
                 answerState={answerState}
                 correctAnswers={quest.correct_answer}
                 check={check}
-                correctCount={setCorrectAnswers}
               />
             )
           })}
