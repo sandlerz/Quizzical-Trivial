@@ -1,8 +1,8 @@
-@use './base' as *;
+@use "./base" as *;
 
 // Bg Images
 
-.bg__image{
+.bg__image {
   background-repeat: no-repeat;
   position: absolute;
   height: 100vh;
@@ -12,31 +12,50 @@
   z-index: -100;
 }
 
-.img__top{
+.img__top {
   background-image: url(../images/bg-blob-top.png);
   background-position: top right;
 }
 
-.img__bot{
+.img__bot {
   background-image: url(../images/bg-blob-bot.png);
   background-position: bottom left;
 }
 
 // Start
 
-.Start{
+.Start {
   display: flex;
   flex-direction: column;
   text-align: center;
 
-  &__description{
+  &__description {
     margin: 0.7rem 0 3rem;
-  }
-
-  &__btn{
-    width: 19.3rem;
-    height: 5.2rem;
-    margin: auto;
   }
 }
 
+// Questions
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.questions__container {
+  max-width: 70rem;
+  padding: 1.5rem 0 2rem;
+  border-bottom: 0.1rem solid #dbdef0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.answers__container {
+  display: flex;
+  gap: 3rem;
+}
+
+.primaryButton--check {
+  margin-top: 3rem;
+  justify-self: center;
+}

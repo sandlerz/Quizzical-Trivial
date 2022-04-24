@@ -1,13 +1,35 @@
-@use './base' as *;
+@use "./base" as *;
 
-button{
+button {
   border: none;
   cursor: pointer;
+  font-family: inter;
+  font-weight: 500;
 }
 
-.primaryButton{
+.primaryButton {
   background-color: $bg-btn;
   color: $text-btn;
   border-radius: 1.5rem;
   font-size: 1.6rem;
+  width: 19.3rem;
+  height: 5.2rem;
+  margin: auto;
+}
+
+.answers-button {
+  background-color: transparent;
+  border: 0.1rem solid $text-answer-btn;
+  border-radius: 1rem;
+  padding: 0.6rem 2.5rem;
+  color: $text;
+}
+
+.answers-button--select {
+  background-color: $bg-select-btn;
+  border: 0.1rem solid $bg-select-btn;
+  border-radius: 1rem;
+  padding: 0.6rem 2.5rem;
+  color: $text;
+  transition: all 0.3s;
 }

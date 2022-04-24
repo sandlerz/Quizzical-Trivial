@@ -42,10 +42,8 @@ body {
   background-color: $bg;
 }
 
-main::after{
-  content: "";
-  
-  
+main {
+  margin: 3rem;
 }
 
 // fonts
@@ -59,11 +57,6 @@ p {
   font-size: 1.6rem;
 }
 
-button {
-  font-family: inter;
-  font-weight: 500;
-}
-
 h1,
 h2,
 h3,
@@ -74,5 +67,3 @@ h6 {
   font-weight: 700;
   color: $text;
 }
-
-

@@ -19,8 +19,6 @@ function App() {
     return () => clearInterval(intervalId)
   }, [getTrivia])
 
-  console.log(loading)
-
   const handleStart = () => {
     getTriviaData().then(questions => {
       setGetTrivia(questions)
@@ -35,7 +33,7 @@ function App() {
       ) : !loading ? (
         <Loading />
       ) : (
-        <Questions questions={getTrivia} />
+        <Questions data={getTrivia} />
       )}
       <div className="bg__image img__bot"></div>
     </main>
