@@ -1,10 +1,10 @@
-@use "./base" as *;
+@use './base' as *;
 
 // Bg Images
 
 .bg__image {
   background-repeat: no-repeat;
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   left: 0;
@@ -15,11 +15,13 @@
 .img__top {
   background-image: url(../images/bg-blob-top.png);
   background-position: top right;
+  background-size: 30vw;
 }
 
 .img__bot {
   background-image: url(../images/bg-blob-bot.png);
   background-position: bottom left;
+  background-size: 30vw;
 }
 
 // Start
@@ -28,9 +30,26 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  &__tittle {
+    position: relative;
+    opacity: 0;
+    animation: show 1s ease-out 1s forwards;
+  }
 
-  &__description {
-    margin: 0.7rem 0 3rem;
+  &__button {
+    position: relative;
+    animation: show 1s ease;
+  }
+}
+
+@keyframes show {
+  0% {
+    top: 10rem;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
   }
 }
 
@@ -41,7 +60,7 @@
   flex-direction: column;
 }
 
-.questions__container {
+.question__container {
   max-width: 70rem;
   padding: 1.5rem 0 2rem;
   border-bottom: 0.1rem solid #dbdef0;
@@ -55,9 +74,14 @@
   gap: 3rem;
 }
 
+.btn_container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .primaryButton--check {
   margin-top: 3rem;
-  justify-self: center;
 }
 
 // footer correct answers
@@ -70,4 +94,44 @@
   align-items: center;
   gap: 3rem;
   font-size: 1.2rem;
+}
+
+// form animation
+.question__container--0 {
+  animation: question 1s forwards ease;
+  transform: translateY(30%);
+  opacity: 0;
+}
+.question__container--1 {
+  animation: question 1s forwards ease 0.5s;
+  transform: translateY(30%);
+  opacity: 0;
+}
+.question__container--2 {
+  animation: question 1s forwards ease 1s;
+  transform: translateY(30%);
+  opacity: 0;
+}
+.question__container--3 {
+  animation: question 1s forwards ease 1.5s;
+  transform: translateY(30%);
+  opacity: 0;
+}
+.question__container--4 {
+  animation: question 1s forwards ease 2s;
+  transform: translateY(30%);
+  opacity: 0;
+}
+
+@keyframes question {
+  0% {
+    transform: translateY(30%);
+  }
+  75% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

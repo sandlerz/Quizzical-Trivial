@@ -1,4 +1,4 @@
-@use "./base" as *;
+@use './base' as *;
 
 button {
   border: none;
@@ -15,6 +15,11 @@ button {
   width: 19.3rem;
   height: 5.2rem;
   margin: auto;
+  transition: filter 0.2s;
+}
+
+.primaryButton:hover {
+  filter: brightness(1.2);
 }
 
 .primaryButton--playAgain {
@@ -27,6 +32,11 @@ button {
   border-radius: 1rem;
   padding: 0.6rem 2.5rem;
   color: $text;
+  transition: background 0.2s;
+}
+
+.answers-button:hover {
+  background-color: $bg-select-btn;
 }
 
 .answers-button--select {
@@ -45,4 +55,22 @@ button {
   padding: 0.6rem 2.5rem;
   color: $text;
   opacity: 0.6;
+}
+
+.quote {
+  opacity: 0;
+  animation: showQuote 1s 2s forwards;
+  margin: 2rem;
+  &__text {
+    width: 50rem;
+  }
+  &__author {
+    font-weight: bolder;
+  }
+}
+
+@keyframes showQuote {
+  100% {
+    opacity: 1;
+  }
 }

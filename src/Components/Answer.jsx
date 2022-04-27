@@ -10,11 +10,11 @@ export default function Answer({
   let style = null
 
   if (answerState[question] === answer && answer === correctAnswers) {
-    style = { backgroundColor: "#94D7A2", opacity: "1" }
+    style = { backgroundColor: '#94D7A2', opacity: '1' }
   } else if (answerState[question] !== answer && answer === correctAnswers) {
-    style = { backgroundColor: "#94D7A2" }
+    style = { backgroundColor: '#94D7A2' }
   } else if (answerState[question] === answer) {
-    style = { backgroundColor: "#F8BCBC", opacity: "1" }
+    style = { backgroundColor: '#F8BCBC', opacity: '1' }
   }
 
   if (check) {
@@ -32,8 +32,8 @@ export default function Answer({
         onClick={() => onClick(answer, question)}
         className={
           answerState[question] === answer
-            ? "answers-button--select"
-            : "answers-button"
+            ? 'answers-button--select'
+            : 'answers-button'
         }
       />
     )
