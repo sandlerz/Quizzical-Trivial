@@ -9,6 +9,7 @@ import Loading from './Components/Loading'
 function App() {
   const [getTrivia, setGetTrivia] = useState([])
   const [loading, setLoading] = useState(false)
+  const [difficulty, setDifficulty] = useState('easy')
 
   useEffect(() => {
     setLoading(true)
@@ -20,13 +21,18 @@ function App() {
   }, [getTrivia])
 
   const handleStart = () => {
-    getTriviaData().then(questions => {
+    getTriviaData(difficulty).then(questions => {
       setGetTrivia(questions)
     })
   }
 
   const handleBack = () => {
     setGetTrivia([])
+  }
+
+  const handleDifficulty = event => {
+    const { name } = event.target
+    setDifficulty(name)
   }
 
   if (loading)
@@ -42,7 +48,11 @@ function App() {
     <main>
       <div className="bg__image img__top"></div>
       {getTrivia == false ? (
-        <Start start={handleStart} />
+        <Start
+          start={handleStart}
+          handleDifficulty={handleDifficulty}
+          difficulty={difficulty}
+        />
       ) : (
         <Questions data={getTrivia} start={handleStart} back={handleBack} />
       )}

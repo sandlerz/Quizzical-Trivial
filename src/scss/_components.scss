@@ -74,3 +74,62 @@ button {
     opacity: 1;
   }
 }
+
+.difficulty__tittle {
+  margin: 2rem 0;
+  width: fit-content;
+  align-self: center;
+  border-bottom: 0.1rem solid $text;
+  animation: difficulty 1s 1s forwards;
+  opacity: 0;
+}
+
+.difficulty__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  animation: difficulty 1s 1.2s forwards;
+  opacity: 0;
+
+  .difficulty__radioBtn {
+    appearance: none;
+    background-color: #fff;
+    margin: auto;
+    width: 3rem;
+    height: 3rem;
+    border: 0.15em solid $text-answer-btn;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  }
+
+  .difficulty__radioBtn::before {
+    content: '';
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.2s transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: $bg-btn;
+  }
+
+  .difficulty__radioBtn:checked::before {
+    transform: scale(1);
+  }
+
+  .difficulty__name {
+    font-family: inter;
+    color: $text;
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes difficulty {
+  100% {
+    opacity: 1;
+  }
+}

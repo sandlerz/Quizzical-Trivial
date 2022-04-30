@@ -1,7 +1,5 @@
-const url =
-  'https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=multiple'
-
-export default function getTriviaData() {
+export default function getTriviaData(difficulty = 'easy') {
+  const url = `https://opentdb.com/api.php?amount=5&category=9&difficulty=${difficulty}&type=multiple`
   return fetch(url)
     .then(res => res.json())
     .then(data => {
